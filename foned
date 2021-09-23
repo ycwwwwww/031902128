@@ -1,0 +1,15 @@
+def check_match_word(self, txt, begin_index, match_type=MinMatchType):
+        """
+        检查文字中是否包含匹配的字符
+        :param txt:待检测的文本
+        :param begin_index: 调用getSensitiveWord时输入的参数，获取词语的上边界index
+        :param match_type:匹配规则 1：最小匹配规则，2：最大匹配规则
+        :return:如果存在，则返回匹配字符的长度，不存在返回0
+        """
+        flag = False
+        match_flag_length = 0  
+        now_map = self.root
+        tmp_flag = 0  
+ 
+        for i in range(begin_index, len(txt)):
+            word = txt[i]
