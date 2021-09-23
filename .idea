@@ -1,1 +1,14 @@
-inspect
+import json
+ 
+MinMatchType = 1  # 最小匹配规则
+MaxMatchType = 2  # 最大匹配规则
+ 
+ 
+class DFAUtils(object):
+    
+    def __init__(self, word_warehouse):
+        :param word_warehouse:
+        self.root = dict()
+        self.skip_root = [' ', '&', '!', '！', '@', '#', '$', '￥', '*', '^', '%', '?', '？', '<', '>', "《", '》']
+        for word in word_warehouse:
+            self.add_word(word)
