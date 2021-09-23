@@ -1,0 +1,6 @@
+import re
+ 
+def sentence_filter(keywords, text):
+    return re.sub("|".join(keywords), "***", text)
+ 
+print(sentence_filter(dirty, speak))
