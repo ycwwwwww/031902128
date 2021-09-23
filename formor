@@ -1,0 +1,21 @@
+def add_word(self, word):
+
+        :param word:
+        :return:
+        now_node = self.root
+        word_count = len(word)
+        for i in range(word_count):
+            char_str = word[i]
+            if char_str in now_node.keys():
+                now_node = now_node.get(word[i])
+                now_node['is_end'] = False
+            else:
+                new_node = dict()
+ 
+                if i == word_count - 1:  
+                    new_node['is_end'] = True
+                else:  
+                    new_node['is_end'] = False
+ 
+                now_node[char_str] = new_node
+                now_node = new_node
